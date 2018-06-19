@@ -1,68 +1,27 @@
-# ngx-markdown-editor
-Angular markdown editor based on ace editor
+# NgxMarkdownEditor
 
-[![peerDependencies Status](https://david-dm.org/lon-yang/ngx-markdown-editor/peer-status.svg)](https://david-dm.org/lon-yang/ngx-markdown-editor?type=peer)
-[![npm version](https://badge.fury.io/js/ngx-markdown-editor.svg)](https://badge.fury.io/js/ngx-markdown-editor)
-[![GitHub license](https://img.shields.io/github/license/lon-yang/ngx-markdown-editor.svg)](https://github.com/lon-yang/ngx-markdown-editor/blob/master/LICENSE)
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
 
-# Usage
+## Development server
 
-- Add `Ace`、`marked`、`highlight` and `font-awesome` lib
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-```html
-<link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-<link href="https://cdn.bootcss.com/highlight.js/9.12.0/styles/agate.min.css" rel="stylesheet">
-<script src="https://cdn.bootcss.com/ace/1.2.8/ace.js"></script>
-<script src="https://cdn.bootcss.com/marked/0.3.6/marked.min.js"></script>
-<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
-```
+## Code scaffolding
 
-- Install `ngx-markdown-editor`
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-```bash
-npm i ngx-markdown-editor
-```
+## Build
 
-- Use markdown-editor component
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
-```ts
-import { LMarkdownEditorModule } from 'ngx-markdown-editor';
+## Running unit tests
 
-@NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    BrowserModule,
-    FormsModule,
-    LMarkdownEditorModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
-})
-export class AppModule { }
-```
-```html
-<md-editor name="Content" [preRender]="preRenderFunc" [(ngModel)]="content" [height]="'200px'" [mode]="mode" [options]="options" required maxlength="500"></md-editor>
-```
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-# Options
-- ngModel: markdown original content
-- height: editor height
-- hideToolbar: hide toolbar, default is false
-- mode: `editor` | `preview`, default is `editor`
-- options: other settings for editor
-  ```javascript
-  {
-    "hideIcons": ['Bold', 'Italic', 'Heading', 'Refrence', 'Link', 'Image', 'Ul', 'Ol', 'Code', 'TogglePreview', 'FullScreen']  // default is empty, the value is case-sensitive
-  }
-  ```
-- preRender(`Function`): For [#13](https://github.com/lon-yang/ngx-markdown-editor/issues/13), this will not effect `ngModel`'s value, just rendered value
-  ```javascript
-  preRenderFunc(content: string) {
-    return content.replace(/something/g, 'new value'); // must return a string
-  }
-  ```
-- required: for form validate
-- maxlength: for form validate
+## Running end-to-end tests
+
+Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+
+## Further help
+
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
